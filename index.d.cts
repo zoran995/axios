@@ -389,6 +389,7 @@ declare namespace axios {
     maxRedirects?: number;
     maxRate?: number | [MaxUploadRate, MaxDownloadRate];
     beforeRedirect?: (options: Record<string, any>, responseDetails: {headers: Record<string, string>}) => void;
+    onHttpSocketEvent?: (socket: any) => void;
     socketPath?: string | null;
     httpAgent?: any;
     httpsAgent?: any;

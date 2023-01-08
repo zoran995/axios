@@ -2591,6 +2591,7 @@ function mergeConfig$1(config1, config2) {
     xsrfHeaderName: defaultToConfig2,
     onUploadProgress: defaultToConfig2,
     onDownloadProgress: defaultToConfig2,
+    onHttpSocketEvent: defaultToConfig2,
     decompress: defaultToConfig2,
     maxContentLength: defaultToConfig2,
     maxBodyLength: defaultToConfig2,

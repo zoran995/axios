@@ -2964,6 +2964,10 @@ const httpAdapter = isHttpAdapterSupported && function httpAdapter(config) {
       req.destroy(err);
     });
 
+    if (config.onHttpSocketEvent && typeof config.onHttpSocketEvent === 'function') {
+      req.on('socket', config.onHttpSocketEvent);
+    }
+
     // Handle errors
     req.on('error', function handleRequestError(err) {
       // @todo remove
@@ -3594,6 +3598,7 @@ function mergeConfig(config1, config2) {
     xsrfHeaderName: defaultToConfig2,
     onUploadProgress: defaultToConfig2,
     onDownloadProgress: defaultToConfig2,
+    onHttpSocketEvent: defaultToConfig2,
     decompress: defaultToConfig2,
     maxContentLength: defaultToConfig2,
     maxBodyLength: defaultToConfig2,
